@@ -1,0 +1,40 @@
+<head>
+<style>
+.three-dee {
+  margin: 30px auto 0;
+  position: absolute;
+  display: block;
+  width: 400px;
+  height: 400px;
+  z-index: 2;
+  outline: 3px solid cyan;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg/800px-Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg"), cyan;
+  background-blend-mode: lighten;
+  background-size: cover;
+}
+.three-dee:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 400px;
+  height: 400px;
+  z-index: 3;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg/800px-Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg"), red;
+  background-blend-mode: lighten;
+  outline: 3px solid red;
+  background-size: cover;
+  mix-blend-mode: darken;
+  -webkit-animation: show-overlap 3s linear infinite alternate;
+          animation: show-overlap 3s linear infinite alternate;
+}
+
+
+@keyframes show-overlap {
+  0% { margin-left: 406px; }
+  40% { margin-left: 406px; }
+  60% { margin-left: 000px; }
+}
+
+</style>
+<div class="three-dee"></div>
+</html>
