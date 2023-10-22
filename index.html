@@ -1,40 +1,9 @@
-<head>
-<style>
-.three-dee {
-  margin: 30px auto 0;
-  position: absolute;
-  display: block;
-  width: 400px;
-  height: 400px;
-  z-index: 2;
-  outline: 3px solid cyan;
-  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg/800px-Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg"), cyan;
-  background-blend-mode: lighten;
-  background-size: cover;
-}
-.three-dee:after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 400px;
-  height: 400px;
-  z-index: 3;
-  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg/800px-Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg"), red;
-  background-blend-mode: lighten;
-  outline: 3px solid red;
-  background-size: cover;
-  mix-blend-mode: darken;
-  -webkit-animation: show-overlap 3s linear infinite alternate;
-          animation: show-overlap 3s linear infinite alternate;
-}
+var playerElement = document.getElementById("player-wrapper");
 
+var player = new Clappr.Player({
+  source: 'https://nogeovod-fy.atresmedia.com/vsg/_definst_/assets2/2021/07/05/50C7B586-C621-4A5B-9A7C-D93291EB7D95/hls.smil/playlist.m3u8',
+  height: 360,
+  width: 640
+});
 
-@keyframes show-overlap {
-  0% { margin-left: 406px; }
-  40% { margin-left: 406px; }
-  60% { margin-left: 000px; }
-}
-
-</style>
-<div class="three-dee"></div>
-</html>
+player.attachTo(playerElement);
